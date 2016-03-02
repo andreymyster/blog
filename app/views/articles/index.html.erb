@@ -1,0 +1,8 @@
+<h2>Список всех постов</h2>
+
+<% @article.each do |item| %>
+  <h4> <%=item.title%> </h4>
+  <p> <%=item.text%> </p>
+  <h6>Добавлено <%=item.created_at%></h6>
+  <hr />
+<% end %>
