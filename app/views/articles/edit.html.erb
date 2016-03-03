@@ -1,6 +1,6 @@
-<h2>Новый пост</h2>
+<h2>Редактировать пост</h2>
 
-<%= form_for :article, url: articles_path do |f| %>
+<%= form_for :article, url: article_path(@article), method: :put do |f| %>
 
   <% if @article && @article.errors.any? %>
     <p>
