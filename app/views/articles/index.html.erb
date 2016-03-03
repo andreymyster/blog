@@ -1,8 +1,14 @@
-<h2>Список всех постов</h2>
-
 <% @article.each do |item| %>
-  <h4> <%=item.title%> </h4>
-  <p> <%=item.text%> </p>
-  <h6>Добавлено <%=item.created_at%></h6>
+  <h3>
+    <%=item.title%>
+  </h3>
+  <p>
+    <%=item.text%>
+  </p>
+  <h5>
+    Добавлено <%=item.created_at%>
+    <%= link_to ' >>>', article_path(item) %> |
+    <%= link_to ' Редактировать', edit_article_path(item) %> <br />
+  </h5>
   <hr />
 <% end %>

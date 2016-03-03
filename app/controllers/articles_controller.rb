@@ -1,4 +1,13 @@
 class ArticlesController < ApplicationController
+
+  def index
+    @article = Article.all
+  end
+
+  def show
+    @article = Article.find params[:id]
+  end
+
   def new
   end
 
@@ -10,14 +19,6 @@ class ArticlesController < ApplicationController
     else
       render action: 'new'
     end
-  end
-
-  def show
-    @article = Article.find params[:id]
-  end
-
-  def index
-    @article = Article.all
   end
 
   private
