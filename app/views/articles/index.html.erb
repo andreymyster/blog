@@ -8,7 +8,10 @@
   <h5>
     Добавлено <%=item.created_at%>
     <%= link_to ' >>>', article_path(item) %> |
-    <%= link_to ' Редактировать', edit_article_path(item) %> <br />
+    <%= link_to ' Редактировать', edit_article_path(item) %> |
+    <%= link_to ' x', article_path(item), method: :delete %> <br />
   </h5>
   <hr />
 <% end %>
+
+<%= link_to 'Новый пост', new_article_path %><br />
