@@ -9,7 +9,8 @@
     Добавлено <%=item.created_at%>
     <%= link_to ' >>>', article_path(item) %> |
     <%= link_to ' Редактировать', edit_article_path(item) %> |
-    <%= link_to ' x', article_path(item), method: :delete %> <br />
+    <%= link_to ' x', article_path(item), method: :delete,
+      data: {confirm: 'Удалить этот пост?'} %> <br />
   </h5>
   <hr />
 <% end %>
