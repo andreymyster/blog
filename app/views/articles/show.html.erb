@@ -9,6 +9,20 @@
   <%= link_to ' Редактировать', edit_article_path(@article) %> <br />
 </h5>
 
+<hr />
+
+<% @article.comments.each do |item| %>
+  <p>
+    <%=item.body%>
+  </p>
+  <h5>
+    Написал <%= item.author %>
+    | <%=item.created_at%>
+    <br />
+  </h5>
+<% end %>
+
+
 <p>
   <%= form_for([@article, @article.comments.build]) do |f| %>
     <p>
