@@ -10,18 +10,17 @@
 </h5>
 
 <hr />
+<h3>Комментарии</h3>
 
 <% @article.comments.each do |item| %>
   <p>
+    <i><%= item.author %>:</i>
     <%=item.body%>
   </p>
-  <h5>
-    Написал <%= item.author %>
-    | <%=item.created_at%>
-    <br />
-  </h5>
 <% end %>
 
+<hr />
+<h3>Новый комментарий</h3>
 
 <p>
   <%= form_for([@article, @article.comments.build]) do |f| %>
