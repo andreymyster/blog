@@ -17,9 +17,9 @@
       <br />
       <div class="col-md-10 col-sm-10 col-xs-8">
         <strong>
-        <a href="/articles/new">Новый пост</a> |
+        <%= link_to 'Новый пост', new_article_path %> |
         <%= link_to 'Список всех постов', articles_path %> |
-        <a href="/contacts">Обратная связь (контакты)</a> |
+        <%= link_to 'Обратная связь', contacts_path %>  |
         <%= link_to 'Terms', terms_path %> |
         <%= link_to 'About', about_path %>
         </strong>
