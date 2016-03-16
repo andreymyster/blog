@@ -1,41 +1,48 @@
-<h3>
-  <%= @article.title %>
-</h3>
-<p>
-  <%= @article.text %>
-</p>
-<h5>
-  <%= @article.created_at %>
-  <%= link_to ' Редактировать', edit_article_path(@article) %> <br />
-</h5>
+<div class="container">
 
-<hr />
-<h3>Комментарии</h3>
+  <h3>
+    <%= @article.title %>
+  </h3>
 
-<% @article.comments.each do |item| %>
   <p>
-    <i><%= item.author %>:</i>
-    <%=item.body%>
+    <%= @article.text %>
   </p>
-<% end %>
 
-<hr />
-<h3>Новый комментарий</h3>
+  <h5>
+    <%= @article.created_at %>
+    <%= link_to ' Редактировать', edit_article_path(@article) %> <br />
+  </h5>
 
-<p>
-  <%= form_for([@article, @article.comments.build]) do |f| %>
+  <hr />
+
+  <h3>Комментарии</h3>
+
+  <% @article.comments.each do |item| %>
     <p>
-      <%= f.label :автор %> <br />
-      <%= f.text_field :author %>
-    </p>
-    <p>
-      <%= f.label :комментарий %> <br />
-      <%= f.text_area :body %>
-    </p>
-    <p>
-      <%= f.submit %>
+      <i><%= item.author %>:</i>
+      <%=item.body%>
     </p>
   <% end %>
-</p>
 
-<%= link_to 'Список всех постов', articles_path %><br />
+  <hr />
+  <h3>Новый комментарий</h3>
+
+  <p>
+    <%= form_for([@article, @article.comments.build]) do |f| %>
+      <!-- <p>
+        <%= f.label :автор %> <br />
+        <%= f.text_field :author %>
+      </p> -->
+      <p>
+        <!-- <%= f.label :комментарий %> <br /> -->
+        <%= f.text_area :body %>
+      </p>
+      <p>
+        <%= f.submit %>
+      </p>
+    <% end %>
+  </p>
+
+  <%= link_to 'Список всех постов', articles_path %><br />
+
+</div>
