@@ -38,6 +38,7 @@ group :development, :test do
   gem 'byebug'
   gem "rspec-rails", "~> 2.4"
   gem 'capybara'
+  gem 'shoulda-matchers'
 end
 
 group :development do
