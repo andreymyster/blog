@@ -9,8 +9,11 @@
   </p>
 
   <h5>
+    Написал: <%= @article.username %> |
     <%= @article.created_at %>
-    <%= link_to ' Редактировать', edit_article_path(@article) %> <br />
+    <% if @article.username == current_user.username %>
+      <%= link_to ' Редактировать', edit_article_path(@article) %> <br />
+    <% end %>
   </h5>
 
   <hr />
