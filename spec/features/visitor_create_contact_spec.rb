@@ -3,6 +3,6 @@ require 'spec_helper'
 feature 'Contact creation' do
   scenario 'Allow access to contact page' do
     visit '/contacts'
-    expect(page).to have_content 'Контакты'
+    expect(page).to have_content I18n.t('contacts.contact_us')
   end
 end
