@@ -14,17 +14,17 @@
   <% end %>
 
   <p>
-    <%= f.label :email %> <br />
+    <%= f.label t('contacts.email') %> <br />
     <%= f.text_field :email %>
   </p>
 
   <p>
-    <%= f.label :Сообщение %> <br />
+    <%= f.label t('contacts.message') %> <br />
     <%= f.text_area :message %>
   </p>
 
   <p>
-    <%= f.submit 'Отправить сообщение' %>
+    <%= f.submit t('contacts.sendmessage') %>
   </p>
 
 <% end %>

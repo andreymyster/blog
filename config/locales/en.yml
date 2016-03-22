@@ -23,3 +23,6 @@ en:
   hello: "Hello world"
   contacts:
     contact_us: "Контакты с нами"
+    email: "E-mail"
+    message: "Сообщение"
+    sendmessage: "Отправить сообщение"
