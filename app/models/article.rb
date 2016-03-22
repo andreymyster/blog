@@ -1,7 +1,9 @@
 class Article < ActiveRecord::Base
   has_many :comments
-  validates :title, presence: true
+  validates :title, presence: true, length: { maximum: 140 }
   validates :text, presence: true
+
+  # ниже идут функции специально написанные для обучения тестам
 
   def subject
     title
