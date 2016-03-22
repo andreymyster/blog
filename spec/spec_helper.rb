@@ -17,6 +17,7 @@ def qwerty_string num
   num.times do
     str += 'a'
   end
+  str
 end
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
