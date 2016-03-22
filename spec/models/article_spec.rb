@@ -8,6 +8,10 @@ describe Article do
 
   describe 'Validations' do
     it { should validate_presence_of :title }
+
+    it { should allow_value(qwerty_string(140)).for(:title) }
+    it { should_not allow_value(qwerty_string(141)).for(:title) }
+
     it { should validate_presence_of :text }
   end
 
