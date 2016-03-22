@@ -12,6 +12,9 @@ describe Article do
     it { should allow_value(qwerty_string(140)).for(:title) }
     it { should_not allow_value(qwerty_string(141)).for(:title) }
 
+    it { should allow_value(qwerty_string(4000)).for(:text) }
+    it { should_not allow_value(qwerty_string(4001)).for(:text) }
+
     it { should validate_presence_of :text }
   end
 
