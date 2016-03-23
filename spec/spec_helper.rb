@@ -11,14 +11,6 @@ Shoulda::Matchers.configure do |config|
   end
 end
 
-# функция создания строки нужной длины
-def qwerty_string num
-  str = ''
-  num.times do
-    str += 'a'
-  end
-  str
-end
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are

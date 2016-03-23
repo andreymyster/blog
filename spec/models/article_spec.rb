@@ -9,6 +9,7 @@ describe Article do
   describe 'Validations' do
     it { should validate_presence_of :title }
 
+    # func qwerty_string defined in model_helper.rb
     it { should allow_value(qwerty_string(140)).for(:title) }
     it { should_not allow_value(qwerty_string(141)).for(:title) }
 
