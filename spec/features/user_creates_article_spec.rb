@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 feature 'Article creation' do
-  before(:all) do
+  before(:each) do
     sign_up
   end
 
@@ -10,14 +10,18 @@ feature 'Article creation' do
     expect(page).to have_content 'Новый пост'
   end
 
-  scenario 'allows user create new article' do
+  scenario 'allows user create new article and new comment' do
     visit new_article_path
 
     fill_in :article_title, :with => 'New'
     fill_in :article_text, :with => 'Text123'
-
     click_button 'Сохранить'
 
     expect(page).to have_content 'Text123'
+
+    fill_in :comment_body, :with => 'Text456'
+    click_button 'Сохранить'
+
+    expect(page).to have_content 'Text456'
   end
 end
